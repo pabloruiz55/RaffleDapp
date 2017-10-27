@@ -1,0 +1,24 @@
+<button (click)="joinRaffle()" type="button" class="btn btn-primary">Join Raffle</button>
+
+<button (click)="generateRandomNum()" type="button" class="btn btn-primary">Draw Winner</button>
+<!-- <button (click)="getChosenNumber()" type="button" class="btn btn-primary">Get chosen Number</button>
+<button (click)="getWinnerAddress()" type="button" class="btn btn-primary">Get Winner</button>
+<button (click)="getParticipants()" type="button" class="btn btn-primary">Get participants</button> -->
+
+<div class="container">
+  Minimum amount of participants: {{minParticipants}} <br/>
+  Maximum amount of participants: {{maxParticipants}}
+</div>
+
+<div *ngIf="raffleFinished" class="container">
+  <strong style="color:blue;">{{raffleWinner}} won the raffle! Congrats!</strong>
+</div>
+
+<div *ngIf="raffleParticipants" class="container">
+  Raffle participants:
+  <ul>
+    <li *ngFor="let participants of raffleParticipants">
+      {{participants}}
+    </li>
+  </ul>
+</div>

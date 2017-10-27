@@ -1,0 +1,25 @@
+<button (click)="startRaffle(2,5)" type="button" class="btn btn-primary">Organize a Raffle!</button>
+<small class="text-muted">Min participants: 2, max participants: 5</small>
+
+
+<!-- <button (click)="getRafflesCreated()" type="button" class="btn btn-primary">Get Raffles List</button>
+
+<button (click)="getRafflesFromEventLogs()" type="button" class="btn btn-primary">Get User Raffles</button> -->
+
+<div *ngIf="userRaffles" class="container">
+  Raffles you created:
+  <ul>
+    <li *ngFor="let raffle of userRaffles">
+      <a [routerLink]="[raffle[0]]">{{[raffle[0]]}}</a>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="rafflesJoinedByUser" class="container">
+  Raffles you joined:
+  <ul>
+    <li *ngFor="let raffle of rafflesJoinedByUser">
+      <a [routerLink]="[raffle[0]]">{{[raffle[0]]}}</a>
+    </li>
+  </ul>
+</div>
